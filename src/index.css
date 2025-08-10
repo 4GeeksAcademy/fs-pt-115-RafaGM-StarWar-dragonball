@@ -1,0 +1,135 @@
+/* Estilos generales */
+body {
+  background-color: #000000; /* gris claro azulado */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-light.bg-info-subtle {
+  background-color: #eff5fb !important;
+  border-bottom: 1px solid #d0e2f2;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card.bg-warning {
+  background-color: #fff9e6 !important; /* amarillo muy suave */
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #1967d2;
+  border-color: #1967d2;
+}
+
+.btn-primary:hover {
+  background-color: #1558b0;
+  border-color: #1558b0;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+  border-color: #c12e2a;
+}
+
+/* Corazón de favoritos */
+.btn-heart {
+  color: #d9534f;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.btn-heart:hover {
+  color: #c9302c;
+}
+
+/* Buscador */
+#buscador {
+  border: 1px solid #d0e2f2;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+#buscador:focus {
+  outline: none;
+  border-color: #1967d2;
+  box-shadow: 0 0 0 2px rgba(25, 103, 210, 0.25);
+}
+
+/* Lista de favoritos */
+.dropdown-menu {
+  min-width: 16rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-item button {
+  margin-left: 0.5rem;
+}
+/* Efecto de brillo para el botón Detalles */
+.btn-details {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-details::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  /* Gradiente para el brillo */
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px; /* comienza fuera del botón */
+}
+
+/* Definición de la animación */
+@keyframes shine {
+  0% {
+    left: -100px; /* empieza fuera del botón */
+  }
+  20% {
+    left: 100%;   /* recorre todo el botón */
+  }
+  100% {
+    left: 100%;   /* se mantiene fuera para no retroceder */
+  }
+}
+
+/* Ejecuta la animación al pasar el ratón */
+.btn-details:hover::before {
+  animation: shine 7s forwards;
+}
